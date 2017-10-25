@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+    <name>com.hessky.EntityTypeSystem</name>
+    <imports>
+        <import location="../../BasicTypeSystem.xml"/>
+    </imports>
+    <types>
+        <typeDescription>
+            <name>com.hessky.Entity.Account_Balance</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Cancel_Card</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Limit</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Balance</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Only_Balance</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Balance_Inquiry</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Minimum</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Current</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Owe</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Account</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Credit</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_PIN_Issues</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Pay</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Somebody</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Payment</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Change_Credit_Limit</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Died</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Transfer</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Balance_Transfer</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Pin</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Cancel</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Apply_Card</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Activate_Card</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Activate</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Open</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Somebody_Died</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Available_Credit</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Personal_Card</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Card</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Much</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Payment_Minimum</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Available</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Personal</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Business_Card</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.INTENT_Change_Credit_Inquiry</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Change</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Business</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+        <typeDescription>
+            <name>com.hessky.Entity.Sentence</name>
+            <description>Type defined in com.hessky.Entity</description>
+            <supertypeName>uima.tcas.Annotation</supertypeName>
+        </typeDescription>
+    </types>
+</typeSystemDescription>

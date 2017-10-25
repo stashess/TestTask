@@ -1,0 +1,117 @@
+PACKAGE com.hessky;
+
+DECLARE Sentence;
+Document{-> RETAINTYPE(BREAK)};
+(#{-> Sentence} BREAK)+;
+
+DECLARE Pin;
+W{REGEXP("[Pp][Ii][Nn]") -> MARK(Pin)};
+
+DECLARE Minimum;
+W{REGEXP("[Mm][Ii][Nn][Ii][Mm][Uu][Mm]") -> MARK(Minimum)};
+
+DECLARE Pay;
+W{REGEXP("([Pp]ay)*([Pp]ayment)*") -> MARK(Pay)};
+
+DECLARE Card;
+W{REGEXP("([Cc]ard.*)*(Visa)*") -> MARK(Card)};
+
+DECLARE Credit;
+W{REGEXP("([Cc]redit)") -> MARK(Credit)};
+
+DECLARE Open;
+W{REGEXP("([Oo]pen)*([Aa]ppl.*)*([Nn]ew)*") -> MARK(Open)};
+
+DECLARE Balance;
+W{REGEXP("([Bb]alance)") -> MARK(Balance)};
+
+DECLARE Account;
+W{REGEXP("([Aa]ccount)") -> MARK(Account)};
+
+DECLARE Account_Balance;
+Sentence{OR(CONTAINS(Balance),CONTAINS(Account)) -> MARK(Account_Balance)};
+
+DECLARE Business;
+W{REGEXP("([Bb]usiness)*") -> MARK(Business)};
+
+DECLARE Personal;
+W{REGEXP("([Pp]ersonal)*") -> MARK(Personal)};
+
+DECLARE Limit;
+W{REGEXP("([Ll]imit.*)*([Ll]ine)*") -> MARK(Limit)};
+
+DECLARE Change;
+W{REGEXP("([Dd]ecrease)*([Ii]ncrease)*([Cc]hange)*") -> MARK(Change)};
+
+DECLARE Available;
+W{REGEXP("([Aa]vailable)*([Mm]uch)*([Ll]eft)*([Rr]emain.*)*") -> MARK(Available)};
+
+DECLARE Cancel;
+W{REGEXP("([Cc]lose)*([Cc]ancel)*([Tt]erminate)*") -> MARK(Cancel)};
+
+DECLARE Activate;
+W{REGEXP("([Aa]ctivat.*)") -> MARK(Activate)};
+
+DECLARE Transfer;
+W{REGEXP("([Tt]ransfer)") -> MARK(Transfer)};
+
+DECLARE Somebody;
+W{REGEXP("([Rr]elative)*([Ff]riend)*") -> MARK(Somebody)};
+
+DECLARE Died;
+W{REGEXP("([Dd]ie.*)*([Pp]ass.*)*") -> MARK(Died)};
+
+DECLARE Owe;
+W{REGEXP("([Oo]we.*)*([Pp]ay)*") -> MARK(Owe)};
+
+DECLARE Much;
+W{REGEXP("([Mm]uch)") -> MARK(Much)};
+
+DECLARE Current;
+W{REGEXP("([Cc]urrent)*(visa)*") -> MARK(Current)};
+
+DECLARE Somebody_Died;
+Sentence{AND(CONTAINS(Somebody),CONTAINS(Died)) -> MARK(Somebody_Died)};
+
+DECLARE INTENT_Apply_Card;
+Sentence{AND(CONTAINS(Open),CONTAINS(Card),-CONTAINS(Personal),-CONTAINS(Business)) -> MARK(INTENT_Apply_Card)};
+
+DECLARE INTENT_Personal_Card;
+Sentence{AND(CONTAINS(Personal),CONTAINS(Card),CONTAINS(Open)) -> MARK(INTENT_Personal_Card)};
+
+DECLARE INTENT_Business_Card;
+Sentence{AND(CONTAINS(Business),CONTAINS(Card),CONTAINS(Open)) -> MARK(INTENT_Business_Card)};
+
+DECLARE INTENT_Balance_Transfer;
+Sentence{AND(CONTAINS(Account_Balance),CONTAINS(Transfer)) -> MARK(INTENT_Balance_Transfer)};
+
+DECLARE INTENT_Activate_Card;
+Sentence{AND(CONTAINS(Card),CONTAINS(Activate)) -> MARK(INTENT_Activate_Card)};
+
+DECLARE INTENT_Cancel_Card;
+Sentence{OR(AND(CONTAINS(Card),CONTAINS(Cancel)),CONTAINS(Somebody_Died)) -> MARK(INTENT_Cancel_Card)};
+
+DECLARE INTENT_Available_Credit;
+Sentence{AND(CONTAINS(Available),OR(CONTAINS(Account_Balance),CONTAINS(Credit))) -> MARK(INTENT_Available_Credit)};
+
+DECLARE INTENT_Change_Credit_Inquiry;
+Sentence{AND(CONTAINS(Limit),-CONTAINS(Change)) -> MARK(INTENT_Change_Credit_Inquiry)};
+
+DECLARE INTENT_Change_Credit_Limit;
+Sentence{AND(CONTAINS(Change),CONTAINS(Limit)) -> MARK(INTENT_Change_Credit_Limit)};
+
+DECLARE INTENT_Payment;
+Sentence{AND(CONTAINS(Pay),OR(CONTAINS(Account_Balance),CONTAINS(Card))) -> MARK(INTENT_Payment)};
+
+DECLARE INTENT_Payment_Minimum;
+Sentence{AND(CONTAINS(Pay),CONTAINS(Minimum)) -> MARK(INTENT_Payment_Minimum)};
+
+DECLARE INTENT_PIN_Issues;
+Sentence{CONTAINS(Pin) -> MARK(INTENT_PIN_Issues)};
+
+DECLARE Only_Balance;
+Sentence{AND(CONTAINS(Balance),-PARTOF(INTENT_Payment),-PARTOF(INTENT_Available_Credit),-PARTOF(INTENT_Balance_Transfer)) -> MARK(Only_Balance)};
+
+DECLARE INTENT_Balance_Inquiry;
+Sentence{OR(AND(CONTAINS(Owe),CONTAINS(Much)),CONTAINS(Only_Balance))-> MARK(INTENT_Balance_Inquiry)};
+
